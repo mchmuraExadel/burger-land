@@ -1,13 +1,12 @@
 import { Calendar } from '@/components/ui/calendar'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
-
 import { useAtom, useAtomValue } from 'jotai'
-import dateAtom from '@/storage/dateAtom.ts'
-import Count from '@/components/Count.tsx'
-import { adultsAtom, familyPromotionAtom, kidsAtom } from '@/storage/peopleAtom.ts'
+import dateAtom from '@/storage/dateAtom'
+import Count from '@/components/Count'
+import { adultsAtom, familyPromotionAtom, kidsAtom } from '@/storage/peopleAtom'
 import { Users } from 'lucide-react'
-import SummaryCard from '@/components/SummaryCard.tsx'
-import { Button } from '@/components/ui/button.tsx'
+import SummaryCard from '@/components/SummaryCard'
+import { Button } from '@/components/ui/button'
 import { NavLink } from 'react-router'
 import { PURCHASE_ROUTES } from '@/const'
 

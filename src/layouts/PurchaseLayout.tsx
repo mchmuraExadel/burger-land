@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from 'react-router'
-import StepIndicator from '@/components/StepIndicator.tsx'
+import StepIndicator from '@/components/StepIndicator'
 import { PURCHASE_ROUTES } from '@/const'
 
 function PurchaseLayout() {

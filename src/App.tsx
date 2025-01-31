@@ -1,10 +1,10 @@
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router'
-import Start from '@/components/Start.tsx'
-import Landing from '@/components/Landing.tsx'
-import PurchaseLayout from '@/layouts/PurchaseLayout.tsx'
+import Start from '@/pages/Start'
+import Landing from '@/pages/Landing'
+import PurchaseLayout from '@/layouts/PurchaseLayout'
 import { PURCHASE_ROUTES } from '@/const'
-import Additional from '@/components/Additional.tsx'
+import Additional from '@/pages/Additional'
 
 function App() {
   return (
