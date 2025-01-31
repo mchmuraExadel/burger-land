@@ -1,9 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { adultsAtom, kidsAtom } from '@/storage/peopleAtom.ts'
+import { adultsAtom, familyPromotionAtom, kidsAtom } from '@/storage/peopleAtom.ts'
 import { useAtomValue } from 'jotai'
 import dateAtom from '@/storage/dateAtom.ts'
 import { format } from 'date-fns'
 import { Separator } from '@/components/ui/separator.tsx'
+import { finalPriceAtom } from '@/storage/priceAtom.ts'
 
 const SummaryCard = () => {
   const date = useAtomValue(dateAtom)
@@ -11,6 +12,8 @@ const SummaryCard = () => {
 
   const adults = useAtomValue(adultsAtom)
   const kids = useAtomValue(kidsAtom)
+  const price = useAtomValue(finalPriceAtom)
+  const familyPromotion = useAtomValue(familyPromotionAtom)
   return (
     <Card className="max-w-xs">
       <CardHeader>
@@ -32,7 +35,9 @@ const SummaryCard = () => {
         <Separator className="my-4" />
         <dl className="my-2 grid grid-cols-2 gap-x-4 gap-y-2">
           <dt>Total:</dt>
-          <dd>{formattedDate}</dd>
+          <dd>${price}</dd>
+          <dt></dt>
+          <dd className="text-xs">{familyPromotion && '(with -20%)'}</dd>
         </dl>
       </CardContent>
     </Card>

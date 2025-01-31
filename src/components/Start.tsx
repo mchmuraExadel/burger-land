@@ -32,7 +32,7 @@ const Start = () => {
           {familyPromotion && (
             <Alert className="mt-6">
               <Users className="h-4 w-4" />
-              <AlertTitle>Family discount</AlertTitle>
+              <AlertTitle>Family discount - 20%!</AlertTitle>
               <AlertDescription>You are eligible for a family discount!</AlertDescription>
             </Alert>
           )}
