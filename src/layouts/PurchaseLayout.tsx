@@ -34,7 +34,7 @@ function PurchaseLayout() {
         </nav>
         <h2 className="text-h2">{getPageName(pathname)}</h2>
       </header>
-      <main>
+      <main className="mb-12">
         <Outlet />
       </main>
     </div>

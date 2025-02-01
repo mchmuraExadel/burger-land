@@ -51,7 +51,7 @@ const Contact = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="mx-auto w-1/2 space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="mx-auto space-y-8 lg:w-1/2">
         <FormField
           control={form.control}
           name="firstName"

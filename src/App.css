@@ -111,9 +111,9 @@
 }
 
 .text-h2 {
-  @apply border-b pb-4 text-3xl font-semibold tracking-tight my-8
+  @apply border-b pb-4 text-2xl lg:text-3xl font-semibold tracking-tight my-8
 }
 
 .text-h3 {
-  @apply text-2xl font-semibold tracking-tight mb-6 mt-12
+  @apply text-2xl font-semibold tracking-tight mb-6 mt-4 lg:mt-12
 }

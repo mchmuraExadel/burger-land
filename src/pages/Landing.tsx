@@ -1,15 +1,15 @@
 import { ArrowDownRight } from 'lucide-react'
-
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Link } from 'react-router'
+import burger from '@/assets/burger.svg'
 
 const Landing = () => {
   return (
-    <section className="mx-auto max-w-7xl p-4 py-32">
+    <section className="mx-auto max-w-7xl p-4 lg:py-32">
       <div className="container">
         <div className="grid items-center gap-8 lg:grid-cols-2">
-          <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+          <div className="order-2 flex flex-col items-center text-center lg:order-1 lg:items-start lg:text-left">
             <Badge variant="outline">
               New family promotions
               <ArrowDownRight className="ml-2 size-4" />
@@ -29,9 +29,9 @@ const Landing = () => {
             </div>
           </div>
           <img
-            src="https://shadcnblocks.com/images/block/placeholder-1.svg"
-            alt="placeholder hero"
-            className="max-h-96 w-full rounded-md object-cover"
+            src={burger}
+            alt="burger hero"
+            className="order-1 w-full rounded-md object-cover object-center lg:order-2"
           />
         </div>
       </div>

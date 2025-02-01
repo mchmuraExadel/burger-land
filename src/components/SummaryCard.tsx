@@ -24,42 +24,42 @@ const SummaryCard = () => {
   const musicalPrice = useAtomValue(musicalPriceAtom)
 
   return (
-    <Card className="max-w-xs">
+    <Card className="w-full lg:w-fit">
       <CardHeader>
         <CardTitle>Your order</CardTitle>
       </CardHeader>
       <CardContent className="min-w-60 pb-1">
         <dl className="my-2 grid grid-cols-2 gap-x-4 gap-y-8">
-          <dt className="w-24">Date:</dt>
-          <dd className="w-24">{date && format(date, 'dd-MM-yyyy')}</dd>
+          <dt>Date:</dt>
+          <dd className="text-nowrap text-right">{date && format(date, 'dd-MM-yyyy')}</dd>
         </dl>
         <Separator className="my-4" />
         <p>Attendees</p>
         <dl className="my-2 grid grid-cols-2 gap-x-4 gap-y-2">
           <dt>Adults</dt>
-          <dd>{adults}</dd>
+          <dd className="text-right">{adults}</dd>
           <dt>Kids</dt>
-          <dd>{kids}</dd>
+          <dd className="text-right">{kids}</dd>
         </dl>
         {isAnyAdditional && (
           <>
             <Separator className="my-4" />
             <dl className="my-2 grid grid-cols-2 gap-x-4 gap-y-2">
               {!!restaurantPrice && <dt>Restaurant</dt>}
-              {!!restaurantPrice && <dt>${restaurantPrice}</dt>}
+              {!!restaurantPrice && <dd className="text-right">${restaurantPrice}</dd>}
               {!!planetariumPrice && <dt>Planetarium</dt>}
-              {!!planetariumPrice && <dt>${planetariumPrice}</dt>}
+              {!!planetariumPrice && <dd className="text-right">${planetariumPrice}</dd>}
               {!!musicalPrice && <dt>Musical</dt>}
-              {!!musicalPrice && <dt>${musicalPrice}</dt>}
+              {!!musicalPrice && <dd className="text-right">${musicalPrice}</dd>}
             </dl>
           </>
         )}
         <Separator className="my-4" />
         <dl className="my-2 grid grid-cols-2 gap-x-4 gap-y-2">
           <dt>Total:</dt>
-          <dd>${price}</dd>
+          <dd className="text-right">${price}</dd>
           <dt></dt>
-          <dd className="text-xs">{familyPromotion && '(with -20%)'}</dd>
+          <dd className="text-right text-xs">{familyPromotion && '(with -20%)'}</dd>
         </dl>
       </CardContent>
     </Card>

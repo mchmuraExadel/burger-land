@@ -1,9 +1,9 @@
 import { Fragment } from 'react'
 import { Separator } from '@/components/ui/separator'
-import { Check } from 'lucide-react'
 import { cn } from '@/lib/utils.ts'
 import { PURCHASE_ROUTES } from '@/const'
 import { useLocation } from 'react-router'
+import burger from '@/assets/burger-icon.svg'
 
 const StepIndicator = () => {
   const location = useLocation()
@@ -43,7 +43,7 @@ const StepIndicator = () => {
               step === activeStepNumber && 'border-primary text-primary',
             )}
           >
-            {step >= activeStepNumber ? step : <Check className="h-5 w-5" />}
+            {step >= activeStepNumber ? step : <img src={burger} className="w-6" alt="hamburger" />}
           </div>
           {step !== 7 && (
             <Separator
