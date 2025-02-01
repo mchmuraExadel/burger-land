@@ -9,13 +9,15 @@ import SummaryCard from '@/components/SummaryCard'
 import { Button } from '@/components/ui/button'
 import { NavLink } from 'react-router'
 import { PURCHASE_ROUTES } from '@/const'
+import { dateAndPeopleSelectedAtom } from '@/storage/dateAndPeopleSelectedAtom.ts'
 
 const Start = () => {
   const [date, setDate] = useAtom(dateAtom)
+  const isDateAndPeopleSelected = useAtomValue(dateAndPeopleSelectedAtom)
   const familyPromotion = useAtomValue(familyPromotionAtom)
 
   return (
-    <div>
+    <div className="flex flex-col">
       <div className="flex flex-col justify-center gap-12 lg:flex-row">
         <div className="flex w-full flex-col items-center justify-center">
           <h3 className="text-h3">Pick date</h3>
@@ -42,9 +44,13 @@ const Start = () => {
         </div>
       </div>
       <div className="mt-12 flex justify-end">
-        <NavLink to={PURCHASE_ROUTES.ADDITIONAL} end>
-          <Button>Next</Button>
-        </NavLink>
+        {isDateAndPeopleSelected ? (
+          <NavLink to={PURCHASE_ROUTES.ADDITIONAL} end>
+            <Button>Next</Button>
+          </NavLink>
+        ) : (
+          <Button disabled>Next</Button>
+        )}
       </div>
     </div>
   )
