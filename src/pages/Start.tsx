@@ -8,7 +8,7 @@ import { Users } from 'lucide-react'
 import SummaryCard from '@/components/SummaryCard'
 import { Button } from '@/components/ui/button'
 import { NavLink } from 'react-router'
-import { PURCHASE_ROUTES } from '@/const'
+import { ADULT_BASE_PRICE, KID_BASE_PRICE, PURCHASE_ROUTES } from '@/const'
 import { dateAndPeopleSelectedAtom } from '@/storage/dateAndPeopleSelectedAtom.ts'
 
 const Start = () => {
@@ -28,8 +28,8 @@ const Start = () => {
             className="rounded-md border"
           />
           <h3 className="text-h3">How many people?</h3>
-          <Count atom={adultsAtom} maxValue={10} label="Adults" />
-          <Count atom={kidsAtom} maxValue={10} label="Kids" />
+          <Count atom={adultsAtom} maxValue={10} label={`Adults $${ADULT_BASE_PRICE}`} />
+          <Count atom={kidsAtom} maxValue={10} label={`Kids $${KID_BASE_PRICE}`} />
           {familyPromotion && (
             <Alert className="mt-6">
               <Users className="h-4 w-4" />

@@ -25,7 +25,7 @@ const Count = ({ atom, maxValue, label }: CountProps) => {
   }
   return (
     <div className="my-2 flex flex-row items-center gap-8">
-      <span className="w-16">{label}</span>
+      <span className="w-20">{label}</span>
       <Button onClick={decrement} disabled={count <= 0}>
         -
       </Button>
