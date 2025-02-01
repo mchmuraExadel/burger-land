@@ -18,21 +18,19 @@ import { PURCHASE_ROUTES } from '@/const'
 import { Loader2 } from 'lucide-react'
 
 const FormSchema = z.object({
-  email: z.string().email(),
-  password: z.string().min(8, {
-    message: 'Password must be at least 8 characters.',
-  }),
+  firstName: z.string().min(2),
+  lastName: z.string().min(2),
 })
 
-const LoginSignup = () => {
+const Contact = () => {
   const navigate = useNavigate()
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      email: '',
-      password: '',
+      firstName: '',
+      lastName: '',
     },
   })
 
@@ -47,7 +45,7 @@ const LoginSignup = () => {
       ),
     })
     setTimeout(() => {
-      navigate(PURCHASE_ROUTES.CONTACT)
+      navigate(PURCHASE_ROUTES.PAYMENT)
     }, 3000)
   }
 
@@ -56,12 +54,12 @@ const LoginSignup = () => {
       <form onSubmit={form.handleSubmit(onSubmit)} className="mx-auto w-1/2 space-y-8">
         <FormField
           control={form.control}
-          name="email"
+          name="firstName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel>First Name</FormLabel>
               <FormControl>
-                <Input type="email" placeholder="your email" {...field} />
+                <Input type="text" placeholder="name" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -69,20 +67,12 @@ const LoginSignup = () => {
         />
         <FormField
           control={form.control}
-          name="password"
+          name="lastName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="flex justify-between">
-                <span>Password</span>
-                <a
-                  href="#"
-                  className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-                >
-                  Forgot your password?
-                </a>
-              </FormLabel>
+              <FormLabel>Last Name</FormLabel>
               <FormControl>
-                <Input type="password" placeholder="password" {...field} />
+                <Input type="text" placeholder="last name" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -90,20 +80,11 @@ const LoginSignup = () => {
         />
         <Button className="w-full" type="submit">
           {isSubmitting && <Loader2 className="animate-spin" />}
-          Login
+          Submit
         </Button>
-        <Button className="w-full" variant="outline" type="button">
-          Login with Google
-        </Button>
-        <div className="mt-4 text-center text-sm">
-          Don&apos;t have an account?{' '}
-          <a href="#" className="underline underline-offset-4">
-            Sign up
-          </a>
-        </div>
       </form>
     </Form>
   )
 }
 
-export default LoginSignup
+export default Contact
