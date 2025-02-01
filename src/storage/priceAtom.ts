@@ -37,4 +37,10 @@ const finalPriceAtom = atom((get) =>
     : get(totalPriceAtom),
 )
 
-export { restaurantPriceAtom, planetariumPriceAtom, musicalPriceAtom, finalPriceAtom }
+export {
+  restaurantPriceAtom,
+  planetariumPriceAtom,
+  musicalPriceAtom,
+  finalPriceAtom,
+  basePriceAtom,
+}
