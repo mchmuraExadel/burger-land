@@ -37,7 +37,7 @@ const Summary = () => {
         <NavLink to={PURCHASE_ROUTES.START} end>
           <Button variant="outline">Modify order</Button>
         </NavLink>
-        <NavLink to={PURCHASE_ROUTES.ADDITIONAL} end>
+        <NavLink to={PURCHASE_ROUTES.LOGIN_SIGNUP} end>
           <Button>Next</Button>
         </NavLink>
       </div>

@@ -14,7 +14,7 @@ function PurchaseLayout() {
       case PURCHASE_ROUTES.SUMMARY:
         return 'Summary'
       case PURCHASE_ROUTES.LOGIN_SIGNUP:
-        return 'Login / Signup'
+        return 'Login or Signup'
       case PURCHASE_ROUTES.CONTACT:
         return 'Contact'
       case PURCHASE_ROUTES.PAYMENT:
