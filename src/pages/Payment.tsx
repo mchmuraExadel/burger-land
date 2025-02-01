@@ -11,7 +11,7 @@ const Payment = () => {
       <img
         src={stripe}
         alt="Stripe"
-        className="w-48 cursor-pointer rounded border border-gray-200 px-8 py-4"
+        className="w-48 cursor-pointer rounded-xl border border-gray-200 bg-card px-8 py-4 text-card-foreground shadow"
         onClick={() => navigate(PURCHASE_ROUTES.CONFIRMATION)}
       />
     </div>
