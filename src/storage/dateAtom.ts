@@ -1,5 +1,5 @@
-import { atom } from 'jotai'
+import { atomWithReset } from 'jotai/utils'
 
-const dateAtom = atom(new Date())
+const dateAtom = atomWithReset(new Date())
 
-export default dateAtom
+export { dateAtom }

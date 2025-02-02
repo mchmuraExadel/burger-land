@@ -1,8 +1,9 @@
 import { atom } from 'jotai'
+import { atomWithReset } from 'jotai/utils'
 
-const restaurantAtom = atom(false)
-const planetariumAtom = atom(false)
-const musicalAtom = atom(false)
+const restaurantAtom = atomWithReset(false)
+const planetariumAtom = atomWithReset(false)
+const musicalAtom = atomWithReset(false)
 
 const isAnyAdditionalSelectedAtom = atom(
   (get) => get(restaurantAtom) || get(planetariumAtom) || get(musicalAtom),

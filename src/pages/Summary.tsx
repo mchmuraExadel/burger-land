@@ -6,7 +6,7 @@ import {
   planetariumPriceAtom,
   restaurantPriceAtom,
 } from '@/storage/priceAtom'
-import dateAtom from '@/storage/dateAtom.ts'
+import { dateAtom } from '@/storage/dateAtom.ts'
 import { format } from 'date-fns'
 import { useAtomValue } from 'jotai'
 import { NavLink } from 'react-router'

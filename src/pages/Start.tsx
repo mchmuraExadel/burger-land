@@ -1,7 +1,7 @@
 import { Calendar } from '@/components/ui/calendar'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { useAtom, useAtomValue } from 'jotai'
-import dateAtom from '@/storage/dateAtom'
+import { dateAtom } from '@/storage/dateAtom'
 import Count from '@/components/Count'
 import { adultsAtom, familyPromotionAtom, kidsAtom } from '@/storage/peopleAtom'
 import { Users } from 'lucide-react'

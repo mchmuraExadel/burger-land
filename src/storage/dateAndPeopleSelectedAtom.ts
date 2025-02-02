@@ -1,5 +1,5 @@
 import { atom } from 'jotai'
-import dateAtom from '@/storage/dateAtom.ts'
+import { dateAtom } from '@/storage/dateAtom.ts'
 import { totalPeopleNumberAtom } from '@/storage/peopleAtom.ts'
 
 const dateAndPeopleSelectedAtom = atom<boolean>((get) => {

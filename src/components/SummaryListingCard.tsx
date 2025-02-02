@@ -22,7 +22,7 @@ const SummaryListingCard = ({ title, atom, isFinal = false }: SummaryListingCard
   const isFamilyPromotion = useAtomValue(familyPromotionAtom)
   if (!price) return null
   return (
-    <Card className={cn('min-w-96', isFinal && 'bg-gray-100')}>
+    <Card className={cn('w-full lg:min-w-96', isFinal && 'bg-gray-100')}>
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         <CardDescription>{`for ${totalPeopleNumber} ${totalPeopleNumber < 2 ? 'person' : 'people'}${isFinal && isFamilyPromotion ? ' - Family discount!' : ''}`}</CardDescription>

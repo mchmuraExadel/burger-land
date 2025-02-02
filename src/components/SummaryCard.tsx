@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { adultsAtom, familyPromotionAtom, kidsAtom } from '@/storage/peopleAtom.ts'
 import { useAtomValue } from 'jotai'
-import dateAtom from '@/storage/dateAtom.ts'
+import { dateAtom } from '@/storage/dateAtom.ts'
 import { format } from 'date-fns'
 import { Separator } from '@/components/ui/separator.tsx'
 import {
