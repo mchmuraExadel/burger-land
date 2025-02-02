@@ -14,7 +14,7 @@ import { dateAndPeopleSelectedAtom } from '@/storage/dateAndPeopleSelectedAtom.t
 const Start = () => {
   const [date, setDate] = useAtom(dateAtom)
   const isDateAndPeopleSelected = useAtomValue(dateAndPeopleSelectedAtom)
-  const familyPromotion = useAtomValue(familyPromotionAtom)
+  const isFamilyPromotion = useAtomValue(familyPromotionAtom)
 
   return (
     <div className="flex flex-col">
@@ -30,7 +30,7 @@ const Start = () => {
           <h3 className="text-h3">How many people?</h3>
           <Count atom={adultsAtom} maxValue={10} label={`Adults $${ADULT_BASE_PRICE}`} />
           <Count atom={kidsAtom} maxValue={10} label={`Kids $${KID_BASE_PRICE}`} />
-          {familyPromotion && (
+          {isFamilyPromotion && (
             <Alert className="mt-6">
               <Users className="h-4 w-4" />
               <AlertTitle>Family discount - 20%!</AlertTitle>
