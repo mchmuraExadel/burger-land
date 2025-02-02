@@ -25,7 +25,7 @@ const SummaryListingCard = ({ title, atom, isFinal = false }: SummaryListingCard
     <Card className={cn('min-w-96', isFinal && 'bg-gray-100')}>
       <CardHeader>
         <CardTitle>{title}</CardTitle>
-        <CardDescription>{`for ${totalPeopleNumber} ${totalPeopleNumber < 2 ? 'person' : 'people'}${isFinal && isFamilyPromotion ? ' - Family promotion!' : ''}`}</CardDescription>
+        <CardDescription>{`for ${totalPeopleNumber} ${totalPeopleNumber < 2 ? 'person' : 'people'}${isFinal && isFamilyPromotion ? ' - Family discount!' : ''}`}</CardDescription>
       </CardHeader>
       <CardContent className="min-w-60 pb-1"></CardContent>
       {isFinal ? (
