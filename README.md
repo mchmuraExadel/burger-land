@@ -7,13 +7,21 @@
 ## High level diagram of the user flow:
 
 ![](user_flow/burger%20land%20(1).png)
+***
 ![](user_flow/burger%20land%20(2).png)
+***
 ![](user_flow/burger%20land%20(3).png)
+***
 ![](user_flow/burger%20land%20(4).png)
+***
 ![](user_flow/burger%20land%20(5).png)
+***
 ![](user_flow/burger%20land%20(6).png)
+***
 ![](user_flow/burger%20land%20(7).png)
+***
 ![](user_flow/burger%20land%20(8).png)
+***
 ![](user_flow/burger%20land%20(9).png)
 
 ## React + TypeScript + Vite
