@@ -1,40 +1,27 @@
 import { Fragment } from 'react'
+import { useLocation } from 'react-router'
 import { Separator } from '@/components/ui/separator'
 import { cn } from '@/lib/utils.ts'
-import { PURCHASE_ROUTES } from '@/const'
-import { useLocation } from 'react-router'
+import { PURCHASE_STEPS } from '@/const'
 import burger from '@/assets/burger-icon.svg'
 
 const StepIndicator = () => {
-  const location = useLocation()
-  const { pathname } = location
+  const { pathname } = useLocation()
+  const stepsNumbers = Object.values(PURCHASE_STEPS).map((step) => step.stepNumber)
 
-  const getStep = (currentPath: string): number => {
-    switch (currentPath) {
-      case PURCHASE_ROUTES.START:
-        return 1
-      case PURCHASE_ROUTES.ADDITIONAL:
-        return 2
-      case PURCHASE_ROUTES.SUMMARY:
-        return 3
-      case PURCHASE_ROUTES.LOGIN_SIGNUP:
-        return 4
-      case PURCHASE_ROUTES.CONTACT:
-        return 5
-      case PURCHASE_ROUTES.PAYMENT:
-        return 6
-      case PURCHASE_ROUTES.CONFIRMATION:
-        return 7
-      default:
-        return 1
+  const getCurrentStepNumber = (currentPath: string): number => {
+    const stepData = PURCHASE_STEPS.find((step) => step.route === currentPath)
+    if (!stepData) {
+      return PURCHASE_STEPS[0].stepNumber
     }
+    return stepData.stepNumber
   }
 
-  const activeStepNumber = getStep(pathname)
+  const activeStepNumber = getCurrentStepNumber(pathname)
 
   return (
     <div className="flex items-center justify-center">
-      {[1, 2, 3, 4, 5, 6, 7].map((step) => (
+      {stepsNumbers.map((step) => (
         <Fragment key={step}>
           <div
             className={cn(

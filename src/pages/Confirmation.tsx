@@ -1,10 +1,10 @@
 import { useNavigate } from 'react-router'
+import { useResetAtom } from 'jotai/utils'
 import { Button } from '@/components/ui/button.tsx'
 import { PURCHASE_ROUTES } from '@/const'
 import { dateAtom } from '@/storage/dateAtom.ts'
 import { adultsAtom, kidsAtom } from '@/storage/peopleAtom.ts'
 import { musicalAtom, planetariumAtom, restaurantAtom } from '@/storage/additionalsAtom.ts'
-import { useResetAtom } from 'jotai/utils'
 
 const Confirmation = () => {
   const navigate = useNavigate()

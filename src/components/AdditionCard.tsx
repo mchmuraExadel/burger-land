@@ -1,3 +1,4 @@
+import { PrimitiveAtom, useAtom } from 'jotai'
 import {
   Card,
   CardContent,
@@ -7,7 +8,6 @@ import {
   CardTitle,
 } from '@/components/ui/card.tsx'
 import { Button } from '@/components/ui/button.tsx'
-import { PrimitiveAtom, useAtom } from 'jotai'
 import { Trash2 } from 'lucide-react'
 
 interface AdditionCardProps {

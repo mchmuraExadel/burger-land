@@ -1,29 +1,16 @@
 import { Outlet, useLocation } from 'react-router'
 import StepIndicator from '@/components/StepIndicator'
-import { PURCHASE_ROUTES } from '@/const'
+import { PURCHASE_STEPS } from '@/const'
 
 function PurchaseLayout() {
-  const location = useLocation()
-  const { pathname } = location
-  const getPageName = (currentPath: string): string => {
-    switch (currentPath) {
-      case PURCHASE_ROUTES.START:
-        return 'Select date and attendees'
-      case PURCHASE_ROUTES.ADDITIONAL:
-        return 'Select additional experiences'
-      case PURCHASE_ROUTES.SUMMARY:
-        return 'Summary'
-      case PURCHASE_ROUTES.LOGIN_SIGNUP:
-        return 'Login or Signup'
-      case PURCHASE_ROUTES.CONTACT:
-        return 'Contact'
-      case PURCHASE_ROUTES.PAYMENT:
-        return 'Payment'
-      case PURCHASE_ROUTES.CONFIRMATION:
-        return 'Confirmation'
-      default:
-        return ''
+  const { pathname } = useLocation()
+
+  const getCurrentPageName = (currentPath: string): string => {
+    const stepData = PURCHASE_STEPS.find((step) => step.route === currentPath)
+    if (!stepData) {
+      return PURCHASE_STEPS[0].label
     }
+    return stepData.label
   }
 
   return (
@@ -32,9 +19,9 @@ function PurchaseLayout() {
         <nav>
           <StepIndicator />
         </nav>
-        <h2 className="text-h2">{getPageName(pathname)}</h2>
+        <h2 className="text-h2">{getCurrentPageName(pathname)}</h2>
       </header>
-      <main className="mb-12">
+      <main className="mb-6">
         <Outlet />
       </main>
     </div>

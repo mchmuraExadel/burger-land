@@ -1,3 +1,4 @@
+import { Atom, useAtomValue } from 'jotai'
 import {
   Card,
   CardContent,
@@ -6,7 +7,6 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card.tsx'
-import { Atom, useAtomValue } from 'jotai'
 import { familyPromotionAtom, totalPeopleNumberAtom } from '@/storage/peopleAtom.ts'
 import { cn } from '@/lib/utils.ts'
 
@@ -32,7 +32,8 @@ const SummaryListingCard = ({ title, atom, isFinal = false }: SummaryListingCard
         <CardFooter className="flex-row justify-between">
           <p>Total price:</p>
           <div className="flex items-center gap-4">
-            <span className="text-xs">{isFamilyPromotion && '-20%'}</span> <span>${price}</span>
+            <span className="text-xs">{isFamilyPromotion && '(with -20%)'}</span>{' '}
+            <span>${price}</span>
           </div>
         </CardFooter>
       ) : (

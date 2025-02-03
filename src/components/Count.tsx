@@ -1,5 +1,5 @@
-import { Button } from '@/components/ui/button.tsx'
 import { useAtom, PrimitiveAtom } from 'jotai'
+import { Button } from '@/components/ui/button.tsx'
 
 interface CountProps {
   atom: PrimitiveAtom<number>

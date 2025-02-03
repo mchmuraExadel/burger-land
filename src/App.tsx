@@ -1,4 +1,3 @@
-import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import Start from '@/pages/Start'
 import Landing from '@/pages/Landing'
@@ -11,6 +10,7 @@ import { Toaster } from '@/components/ui/toaster'
 import Contact from '@/pages/Contact.tsx'
 import Payment from '@/pages/Payment.tsx'
 import Confirmation from '@/pages/Confirmation.tsx'
+import './App.css'
 
 function App() {
   return (

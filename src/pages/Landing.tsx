@@ -1,7 +1,7 @@
 import { ArrowDownRight } from 'lucide-react'
+import { Link } from 'react-router'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Link } from 'react-router'
 import burger from '@/assets/burger.svg'
 
 const Landing = () => {

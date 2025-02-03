@@ -1,3 +1,6 @@
+import { NavLink } from 'react-router'
+import { useAtomValue } from 'jotai'
+import { format } from 'date-fns'
 import SummaryListingCard from '@/components/SummaryListingCard.tsx'
 import {
   basePriceAtom,
@@ -7,9 +10,6 @@ import {
   restaurantPriceAtom,
 } from '@/storage/priceAtom'
 import { dateAtom } from '@/storage/dateAtom.ts'
-import { format } from 'date-fns'
-import { useAtomValue } from 'jotai'
-import { NavLink } from 'react-router'
 import { PURCHASE_ROUTES } from '@/const'
 import { Button } from '@/components/ui/button.tsx'
 import { dateAndPeopleSelectedAtom } from '@/storage/dateAndPeopleSelectedAtom.ts'
